@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="Style.CSS">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <title>My Contact Page</title>
+</head>
+
+<body>
+    <div class="headersection tamplate clear">
+        <div class="logo">
+            <img src="Images/Avengers.png" alt="logo">
+
+        </div>
+        <div class="social">
+            <a href="http://www.facebook.com" target="_blank"><img src="Images/facebook.png" alt="Facebook" /></a>
+            <a href="http://www.twitter.com" target="_blank"> <img src="Images/Twitter.png" alt="Twitter" /></a>
+            <a href="http://www.Linkedin.com" target="_blank"><img src="Images/Linkedin.png" alt="LinkedIn" /></a>
+            <a href="http://www.instagram.com" target="_blank"><img src="Images/instragram.png" alt="Instragram" /></a>
+        </div>
+    </div>
+    <div class="navsection tamplate clear">
+        <ul>
+            <li><a id="active" href="Index.html"></a>Home</li>
+            <li><a href="About.html"></a>About</li>
+            <li><a href="HTML.html"></a>HTML</li>
+            <li><a href="CSS.html"></a>CSS</li>
+            <li><a href="Java.html"></a>Java</li>
+            <li><a href="Contact.html"></a>Contact</li>
+        </ul>
+    </div>
+
+    <div class="contentsection tamplate clear">
+        <div class="maincontent">
+            <div class="about">
+                <h2>Contact us</h2>
+                <table>
+                    <tr>
+                        <td>Your First Name </td>
+                        <td><input type="text" name="firstname" placeholder="Enter first name"></td>
+                    </tr>
+                    <tr>
+                        <td>Your Last Name</td>
+                        <td><input type="text" name="lastname" placeholder="Enter last name"></td>
+                    </tr>
+                    <tr>
+                        <td>Your E-mail Address</td>
+                        <td><input type="email" name="email" placeholder="Enter email address"></td>
+                    </tr>
+                    <tr>
+                        <td>Your massage</td>
+                        <td>
+                            <textarea type="text" cols="40" rows="8" placeholder="Enter your massage"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" name="submit" value="Submit">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="googlemap">
+                <div id="map"></div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="samesidebar">
+                <h2>Latest Articles</h2>
+                <ul>
+                    <li><a href="#">Post title one is here</a></li>
+                    <li><a href="#">Post title two is here</a></li>
+                    <li><a href="#">Post title three is here</a></li>
+                    <li><a href="#">Post title four is here</a></li>
+                    <li><a href="#">Post title five is here</a></li>
+                    <li><a href="#">Post title six is here</a></li>
+
+                </ul>
+
+                <h2>popular Articles</h2>
+                <h3><a href="#">Post title here</a></h3>
+                <img src="Images/field.jpg" alt="post image">
+                <p>looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal. looking
+                    at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+
+                <h3><a href="#">Post title here</a></h3>
+                <img src="Images/night-insect.jpg" alt="post image">
+                <p>looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.
+                    looking
+                    at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+
+                <h3><a href="#">Post title here</a></h3>
+                <img src="Images/tiger.jpg" alt="post image">
+                <p>looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.
+                    looking
+                    at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footersection tamplate clear">
+        <div class="footermenu clear">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Privacy</a></li>
+            </ul>
+        </div>
+        <p>&copy; Copyright Salim Malik</p>
+    </div>
+    <!---------Icon---------->
+    <div class="fixedicon clear">
+        <a href="https://www.facebook.com/"><img src="Images/Icon/facebook.png" alt="Facebook"></a>
+        <a href="https://www.twitter.com"><img src="Images/Icon/twitter.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com" target="_blank"><img src="Images/Icon/instagram.png" alt="Instragram"></a>
+        <a href="https://www.whatsapp.com" target="_blank"><img src="Images/Icon/whatsapp.png" alt="whatsapp"></a>
+        <a href="https://www.youtube.com" target="_blank"><img src="Images/Icon/youtube.png" alt="youtube"></a>
+    </div>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="js/gmaps.js"></script>
+    <script type="text/javascript">
+        var map;
+        $(document).ready(function () {
+            var map = new GMaps({
+                el: '#map',
+                lat: -12.043333,
+                lng: -77.028333
+            });
+
+            GMaps.geolocate({
+                success: function (position) {
+                    map.setCenter(position.coords.latitude, position.coords.longitude);
+                },
+                error: function (error) {
+                    alert('Geolocation failed: ' + error.message);
+                },
+                not_supported: function () {
+                    alert("Your browser does not support geolocation");
+                },
+                always: function () {
+                    alert("Done!");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
